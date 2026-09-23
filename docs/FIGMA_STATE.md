@@ -1,0 +1,62 @@
+# Nerd Glass Figma state
+
+Run: `nerd-glass-foundations-2026-09-23`. File: [Nerd Fit — Nerd Glass v1](https://www.figma.com/design/hNdcDjtyKpUaQRIK1smFLI).
+
+## Scope and discovery
+
+P0.a–P0.f complete: docs/DESIGN_SYSTEM.md, PRODUCT_SPEC.md and USER_FLOWS.md inspected. At discovery no src directory existed; the parent is scaffolding it in parallel. The explicit ten-color foundation contract is authoritative. File initially contained only empty Page 1 (`0:1`), with no variables/styles/components. Roboto Regular and Medium verified available.
+
+Material 3 library discovery and Button/color/spacing searches completed. Button results have Material-specific variant/token models; no matching Nerd Glass variables returned. Original local components will use the supplied contract; no remote components imported. Search tool clamps batches to one query, so remaining required queries were submitted separately.
+
+Locked scope: primitive/color/layout/typography variables; five text styles; overlay shadow; foundation documentation; Button, GlassSurface, Field, GlassDock/navigation and FloatingComposer/capture foundations. Dark mode only in this bounded phase. Full product screens, animation prototypes and production Code Connect are pending, not implied by this file.
+
+## State ledger
+
+## Current blocker and completion boundary
+
+P0 and P1 complete. P2 documentation is created, but post-repair screenshot validation is **BLOCKED**. The screenshot tool returns: `You've reached the Figma MCP tool call limit on the Starter plan. Upgrade your plan for more tool calls`. It links to the team's MCP quota upgrade page. No upgrade was attempted and no component creation continued past the failed visual gate. Account inspection confirmed a Starter plan with a Full seat.
+
+Earlier P2 page-structure creation failed with tool error: `in createPage: The Starter plan only comes with 3 pages. Upgrade to Professional for unlimited pages: https://www.figma.com/pricing`. Error code `INVALID_ARGUMENT`; debug UUID `bdcbad4f-40ce-4083-bc73-c9e46e93621f`; `safeToRetryWithoutCanvasRead: true`.
+
+Read-only recovery verified that the failed page call rolled back to empty `Page 1` (`0:1`). Subsequent three-page creation and documentation succeeded, as recorded below. All 75 variables, five text styles and one overlay effect remain. No components have been created. The first screenshots were inspected and found clipping; the repair was verified structurally, but a post-repair render could not be obtained because of the quota.
+
+The library skill's default page skeleton exceeds this file's three-page plan. Applying the user's higher-priority instruction to resolve routine engineering choices and continue, this organizational constraint was handled explicitly by three pages: Guide (Cover + Getting Started), Foundations, Components (including Utilities). Future component families can have separately named sections. Parent notified. The page-count issue is resolved without an upgrade; the subsequent MCP quota remains blocked. P2 visual validation and P3–P4 remain pending. No component or complete-app-design claim is justified.
+
+## Handoff
+
+- [Guide](https://www.figma.com/design/hNdcDjtyKpUaQRIK1smFLI?node-id=10-2): product principles and library navigation; structurally 1100×692 after repair.
+- [Foundations](https://www.figma.com/design/hNdcDjtyKpUaQRIK1smFLI?node-id=11-2): variable-bound palette/type/spacing/shape/responsive specimens; structurally 1100×1304 after repair.
+- [Components page](https://www.figma.com/design/hNdcDjtyKpUaQRIK1smFLI?node-id=9-3): empty, reserved for the bounded next step.
+- Completed: source contract/discovery, token aliases/scopes/code syntax audit, typography/effect creation, guide and foundations documentation creation, structural repair.
+- Pending: post-repair screenshots; Button (Primary/Secondary × Default/Pressed/Disabled/Busy), GlassSurface (Tonal/Raised/OverlayFallback), Field (Default/Focused/Error/Disabled), navigation and capture component foundations. Each needs properties, variable binding audit, metadata and visual validation before its dependent component.
+- Also pending: contrast audit, font-scaling specimens, focus states, full app screens, full responsive states, actual Android blur/motion behavior, and production Code Connect. No publish action performed.
+- Resume: read this ledger, inspect the three current pages, obtain screenshots of `10:2` and `11:2` once tool access resumes, repair any remaining visual issues, then continue one component at a time on `9:3`. Do not recreate existing variables or docs.
+
+## Detailed ledger
+
+P2.c initial screenshot showed fixed-height clipping. Readback isolated `resize()` setting primary axis FIXED. Restored vertical AUTO height on exact nodes: Guide `10:2`, `10:8`, `10:11`, `10:14`; Foundations `11:2`, `11:9`, `11:13`, `11:17`, `11:21`, `11:25`, `11:30`, `11:34`, `11:38`, `11:42`, `11:46`, `11:81`. Readback now Guide 1100×692; Foundations 1100×1304. Repeat visual validation pending.
+
+P2.b Foundations nodes: `11:2`, `11:3`, `11:4`, `11:5`, `11:6`, `11:7`, `11:8`, `11:9`, `11:10`, `11:11`, `11:12`, `11:13`, `11:14`, `11:15`, `11:16`, `11:17`, `11:18`, `11:19`, `11:20`, `11:21`, `11:22`, `11:23`, `11:24`, `11:25`, `11:26`, `11:27`, `11:28`, `11:29`, `11:30`, `11:31`, `11:32`, `11:33`, `11:34`, `11:35`, `11:36`, `11:37`, `11:38`, `11:39`, `11:40`, `11:41`, `11:42`, `11:43`, `11:44`, `11:45`, `11:46`, `11:47`, `11:48`, `11:49`, `11:50`, `11:51`, `11:52`, `11:53`, `11:54`, `11:55`, `11:56`, `11:57`, `11:58`, `11:59`, `11:60`, `11:61`, `11:62`, `11:63`, `11:64`, `11:65`, `11:66`, `11:67`, `11:68`, `11:69`, `11:70`, `11:71`, `11:72`, `11:73`, `11:74`, `11:75`, `11:76`, `11:77`, `11:78`, `11:79`, `11:80`, `11:81`, `11:82`, `11:83`, `11:84`; root `11:2`.
+
+P2.b Guide nodes: `10:2`, `10:3`, `10:4`, `10:5`, `10:6`, `10:7`, `10:8`, `10:9`, `10:10`, `10:11`, `10:12`, `10:13`, `10:14`, `10:15`, `10:16`, `10:17`, `10:18`; root `10:2`.
+
+P2.a final pages: Guide `0:1`, Foundations `9:2`, Components `9:3`.
+
+P1 validation passed: 75 variables, four single-mode collections, no ALL_SCOPES, no missing WEB/Android syntax, no broken aliases. Five Roboto styles bind size/line/family variables. Code syntax is a deterministic proposed naming bridge; actual scaffold tokens must be reconciled before Code Connect.
+
+P1.f styles:
+```json
+{"createdStyles":[{"id":"S:e4132df6525dd91ce861630842617cf3090356af,","name":"Nerd Glass/Caption","size":14,"line":20,"weight":"Regular"},{"id":"S:93fe3ce0f1b396818d78c82c07c2ef38accbd151,","name":"Nerd Glass/Body","size":16,"line":24,"weight":"Regular"},{"id":"S:1d6e281a86a0222f89c55e4d0a64fa02fea4b00d,","name":"Nerd Glass/Section","size":20,"line":28,"weight":"Medium"},{"id":"S:6921e45941d3de8ad49042c9dc24cae75065f884,","name":"Nerd Glass/Page","size":32,"line":40,"weight":"Medium"},{"id":"S:a9966737ffdf51b3d0fbfb60fd66fc91987c7b63,","name":"Nerd Glass/Metric","size":48,"line":56,"weight":"Medium"}],"createdEffects":[{"id":"S:061757d53b250ce30af32ee099d218ba3f6f2379,","name":"Nerd Glass/Overlay shadow"}],"createdNodeIds":[]}
+```
+
+P1.a created collections: Primitives `VariableCollectionId:2:2` mode `2:0`; Color `VariableCollectionId:2:3` Dark mode `2:1`; Layout `VariableCollectionId:2:4` mode `2:2`; Typography `VariableCollectionId:2:5` mode `2:3`. This document is the persistent ledger; no workflow state is stored in Figma nodes.
+
+P1.c–P1.e semantic ledger (41 variables; aliases/scopes and WEB/Android syntax):
+```json
+[{"id":"VariableID:4:2","name":"color/background","collection":"Nerd Glass Color"},{"id":"VariableID:4:3","name":"color/surface","collection":"Nerd Glass Color"},{"id":"VariableID:4:4","name":"color/raised","collection":"Nerd Glass Color"},{"id":"VariableID:4:5","name":"color/text","collection":"Nerd Glass Color"},{"id":"VariableID:4:6","name":"color/muted","collection":"Nerd Glass Color"},{"id":"VariableID:4:7","name":"color/accent","collection":"Nerd Glass Color"},{"id":"VariableID:4:8","name":"color/accentInk","collection":"Nerd Glass Color"},{"id":"VariableID:4:9","name":"color/info","collection":"Nerd Glass Color"},{"id":"VariableID:4:10","name":"color/warning","collection":"Nerd Glass Color"},{"id":"VariableID:4:11","name":"color/border","collection":"Nerd Glass Color"},{"id":"VariableID:4:12","name":"space/0","collection":"Nerd Glass Layout"},{"id":"VariableID:4:13","name":"space/4","collection":"Nerd Glass Layout"},{"id":"VariableID:4:14","name":"space/8","collection":"Nerd Glass Layout"},{"id":"VariableID:4:15","name":"space/12","collection":"Nerd Glass Layout"},{"id":"VariableID:4:16","name":"space/16","collection":"Nerd Glass Layout"},{"id":"VariableID:4:17","name":"space/24","collection":"Nerd Glass Layout"},{"id":"VariableID:4:18","name":"space/32","collection":"Nerd Glass Layout"},{"id":"VariableID:4:19","name":"space/48","collection":"Nerd Glass Layout"},{"id":"VariableID:4:20","name":"radius/12","collection":"Nerd Glass Layout"},{"id":"VariableID:4:21","name":"radius/20","collection":"Nerd Glass Layout"},{"id":"VariableID:4:22","name":"radius/28","collection":"Nerd Glass Layout"},{"id":"VariableID:4:23","name":"touch/min","collection":"Nerd Glass Layout"},{"id":"VariableID:4:24","name":"control/height","collection":"Nerd Glass Layout"},{"id":"VariableID:4:25","name":"layout/formMax","collection":"Nerd Glass Layout"},{"id":"VariableID:4:26","name":"layout/twoColumns","collection":"Nerd Glass Layout"},{"id":"VariableID:4:27","name":"layout/contentMax","collection":"Nerd Glass Layout"},{"id":"VariableID:4:28","name":"stroke/1","collection":"Nerd Glass Layout"},{"id":"VariableID:4:29","name":"stroke/2","collection":"Nerd Glass Layout"},{"id":"VariableID:4:30","name":"type/caption/size","collection":"Nerd Glass Typography"},{"id":"VariableID:4:31","name":"type/caption/line","collection":"Nerd Glass Typography"},{"id":"VariableID:4:32","name":"type/body/size","collection":"Nerd Glass Typography"},{"id":"VariableID:4:33","name":"type/body/line","collection":"Nerd Glass Typography"},{"id":"VariableID:4:34","name":"type/section/size","collection":"Nerd Glass Typography"},{"id":"VariableID:4:35","name":"type/section/line","collection":"Nerd Glass Typography"},{"id":"VariableID:4:36","name":"type/page/size","collection":"Nerd Glass Typography"},{"id":"VariableID:4:37","name":"type/page/line","collection":"Nerd Glass Typography"},{"id":"VariableID:4:38","name":"type/metric/size","collection":"Nerd Glass Typography"},{"id":"VariableID:4:39","name":"type/metric/line","collection":"Nerd Glass Typography"},{"id":"VariableID:4:40","name":"type/family","collection":"Nerd Glass Typography"},{"id":"VariableID:4:41","name":"type/regular","collection":"Nerd Glass Typography"},{"id":"VariableID:4:42","name":"type/medium","collection":"Nerd Glass Typography"}]
+```
+
+P1.b primitive ledger (34 variables; hidden scopes, WEB and Android syntax):
+```json
+[{"id":"VariableID:3:2","name":"color/background"},{"id":"VariableID:3:3","name":"color/surface"},{"id":"VariableID:3:4","name":"color/raised"},{"id":"VariableID:3:5","name":"color/text"},{"id":"VariableID:3:6","name":"color/muted"},{"id":"VariableID:3:7","name":"color/accent"},{"id":"VariableID:3:8","name":"color/accentInk"},{"id":"VariableID:3:9","name":"color/info"},{"id":"VariableID:3:10","name":"color/warning"},{"id":"VariableID:3:11","name":"color/border"},{"id":"VariableID:3:12","name":"number/0"},{"id":"VariableID:3:13","name":"number/1"},{"id":"VariableID:3:14","name":"number/2"},{"id":"VariableID:3:15","name":"number/4"},{"id":"VariableID:3:16","name":"number/8"},{"id":"VariableID:3:17","name":"number/12"},{"id":"VariableID:3:18","name":"number/14"},{"id":"VariableID:3:19","name":"number/16"},{"id":"VariableID:3:20","name":"number/20"},{"id":"VariableID:3:21","name":"number/22"},{"id":"VariableID:3:22","name":"number/24"},{"id":"VariableID:3:23","name":"number/26"},{"id":"VariableID:3:24","name":"number/28"},{"id":"VariableID:3:25","name":"number/32"},{"id":"VariableID:3:26","name":"number/40"},{"id":"VariableID:3:27","name":"number/48"},{"id":"VariableID:3:28","name":"number/56"},{"id":"VariableID:3:29","name":"number/64"},{"id":"VariableID:3:30","name":"number/560"},{"id":"VariableID:3:31","name":"number/720"},{"id":"VariableID:3:32","name":"number/1100"},{"id":"VariableID:3:33","name":"font/family"},{"id":"VariableID:3:34","name":"font/regular"},{"id":"VariableID:3:35","name":"font/medium"}]
+```
