@@ -141,3 +141,26 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Nerd Fit local/native build state and secrets
+.expo/
+.gradle/
+android/.gradle/
+android/.cxx/
+android/app/.cxx/
+android/build/
+android/app/build/
+android/local.properties
+*.jks
+*.keystore
+*.p12
+*.dpapi
+keystore.properties
+credentials.json
+artifacts/
+.work/
+data/raw/
+.work-*.json
+deliverables/*.apk
+deliverables/*.aab
+deliverables/*.idsig

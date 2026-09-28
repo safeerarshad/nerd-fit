@@ -41,3 +41,7 @@
 | AAB/Play preparation | Release workflow | store assets | signing gate | none | validated AAB | bundle/signing guard | splits install | BLOCKED |
 | Android widgets | Launcher | post-core widget | summaries | queried facts | widget | widget refresh | launcher test | PLANNED |
 | Shopping/receipts | Post-core | list/OCR | recipe aggregation | future schema | list | ingredient merge | shopping flow | PLANNED |
+
+## First APK checkpoint — 2026-09-27
+
+Core onboarding/initial plans/weekly distribution/macros/Home/manual food/raw weight/units/glass/About now have source implementations and SQLite tests. Review fixes and Android runtime validation are in progress; none is marked end-to-end COMPLETE yet. The first APK scope follows APK_DELIVERY_DIRECTIVE; remaining roadmap rows stay planned. Release guards have12 passing tests; no final APK claim at this checkpoint.
