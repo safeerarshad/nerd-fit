@@ -146,6 +146,7 @@ vite.config.ts.timestamp-*
 .expo/
 .gradle/
 android/.gradle/
+android/.kotlin/
 android/.cxx/
 android/app/.cxx/
 android/build/
