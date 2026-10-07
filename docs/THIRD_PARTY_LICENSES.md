@@ -1,6 +1,6 @@
 # Third-party packages, license inventory and advisory triage
 
-Inventory refreshed **2026-09-28** from installed package metadata and `package-lock.json`. Publisher/registry research and the supplied `.work-audit.json` were checked on **2026-09-23**; those advisory counts and latest-version claims are historical, not a fresh network audit. The build coordinator reports 14 moderate entries after the latest Expo patch updates; the corresponding fresh JSON was not yet supplied to this reviewer, so the detailed 13-entry table below remains explicitly historical. This is a bounded inventory and static triage, not exploit validation, a license opinion or release approval. No packages were changed by this research.
+Inventory refreshed **2026-09-28** from installed package metadata and `package-lock.json`; the coordinator's fresh `.work/audit-sept28.json` was also inspected. It reports 14 moderate package entries, no high/critical entries, and the same two underlying advisories. Publisher/registry latest-version research below dates to **2026-09-23** and should be rechecked when implementing upgrades. This is a bounded inventory and static triage, not exploit validation, a license opinion or release approval. No packages were changed by this research.
 
 The inspected lockfile SHA-256 is `ec232bacc3ac75e8216affbec808fc381a9c528edeb645762f885bee17336a3e`. This snapshot removes `expo-dev-client`, adds the native date/time picker and slider, and incorporates Expo 57.0.25 / Linking 57.0.11 / Router 57.0.23. The supplied audit predates this snapshot and counted 842 dependencies; the current lock contains 838 package instances. Refresh audit data before drawing conclusions about current advisory counts. Native/APK contents require a separate release inventory.
 
@@ -98,7 +98,7 @@ Recommended path: retain the current working lint stack while building the inter
 
 ## Supplied audit: claim-specific static triage
 
-Input: `.work-audit.json`, npm audit report version 2, **13 moderate entries**, no high/critical entries, with two underlying advisory objects. This report is retained as supplied; the following inventory preserves every package entry rather than discarding propagated results. Severity remains the scanner's severity, not a new Nerd Fit score. No applicable `SECURITY.md` was found by the resolver for the affected decoder or Xcode paths; product scope is anchored in the Android/local-build specification. No exploit payloads were run.
+Inputs: original `.work-audit.json` (September 23, 13 moderate entries) and current `.work/audit-sept28.json` (September 28, **14 moderate entries**, no high/critical entries, 838 dependencies). Both contain the same two underlying advisory objects. The additional entry is `@react-native-community/datetimepicker`, propagated through its Expo dependency; the report does not supply a separate date-picker vulnerability. The following inventory preserves every current package entry. Severity remains the scanner's severity, not a new Nerd Fit score. No applicable `SECURITY.md` was found by the resolver for the affected decoder or Xcode paths; product scope is anchored in the Android/local-build specification. No exploit payloads were run.
 
 ### Decoder chain: review queue
 
@@ -139,6 +139,7 @@ Verdict: **not_actionable for this supplied bounds-write claim on the current in
 | triage-011 | @expo/metro-config | U: config propagation | not_actionable on propagated claim/path | — |
 | triage-012 | @expo/prebuild-config | U: config/plugin propagation | not_actionable on propagated claim/path | — |
 | triage-013 | expo | U: aggregated tooling propagation | not_actionable on propagated claim/path | — |
+| triage-014 | @react-native-community/datetimepicker | U: Expo dependency propagation, no independent advisory | not_actionable on propagated claim/path | — |
 
 ## Remediation candidates and compatibility gates
 

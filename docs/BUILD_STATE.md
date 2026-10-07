@@ -1,27 +1,26 @@
 # Build state
 
-Updated 2026-09-27. Branch `astra-v1`; last committed source d24514c. No delivered APK yet. Immediate objective: coherent first signed standalone APK, then user phone feedback. Do not restart or work on main.
+Updated 2026-10-07. Work branch `astra-v1`, source committed/pushed through `5275c9d` (core app commit `0457640`). No delivered APK yet. Immediate objective remains first coherent signed standalone APK, then real-phone feedback. Do not restart or expand scope.
 
-## Implemented
+## Completed
 
-- Expo57/RN0.86/React19.2 scaffold; native generation succeeds for stable ID `dev.safeerarshad.nerdfit`, version0.1.0/code1. Removed expo-dev-client. SDK36, JDK17, Node24, TypeScript6.
-- Four-step onboarding, deterministic initial Cut/Maintain/Bulk targets and weekly distribution, summary, Home, manual food capture/journal, raw weight capture/history, Settings units/glass/About, navigation.
-- SQLite migrations1–3, atomic profile/goal/target persistence, target extension, food/weight/audit/status/settings persistence. Prior full suite69passed before added release/adapter tests.
-- Signing safeguards tested: five credential-pair cases pass; seven native release guard cases pass. Script records public certificate fingerprint; private key/password outside Git under user .nerdfit/signing, DPAPI password. APK verifier checks signature/package/version/nondebug/bundledJS/credential files.
-- Figma foundations saved; full design work blocked by tool quota. Trend candidate research exists but is not shipped as an adaptive coaching system.
+- Expo57.0.25/RN0.86.3/React19.2.3, SQLite migrations1–3, four-step onboarding, initial Cut/Maintain/Bulk plans and weekly distribution, Home, manual food/weight capture and histories, Settings units/glass/About.
+- Review fixes: invalid numeric draft handling, goal/distribution step validation, average macros/unit pace, per-connection serialized SQLite transactions with foreign keys, stale diary request cancellation and selected-date capture.
+- Sept28 full typecheck/lint and94 tests passed. Expo dependency compatibility passed after linking57.0.11/router57.0.23 patches. Keep the locked candidate; no need to chase newer releases before delivery.
+- Stable app ID `dev.safeerarshad.nerdfit`, version0.1.0/code1. Stable internal signing key exists outside Git at user .nerdfit/signing; password DPAPI protected. Public fingerprint recorded in docs/INTERNAL_CERTIFICATE_SHA256.txt. Never recreate identity or reveal credentials.
+- Build guards: symmetric credential-pair/fingerprint checks, native identity/version/bundle checks, output APK signature/ID/version/bundle/debug/credential-file checks. PowerShell imports explicit host Security/Utility modules, trims stored DPAPI newline.
+- Codex Security scan b8110e6d-8427-44dd-9a67-0f425be12232 complete with zero validated findings and partial coverage, not certification. Fresh Sept28 npm audit14moderate/0high/0critical (two underlying advisories), detailed in THIRD_PARTY_LICENSES and SECURITY_CHECKPOINT. Artifact checks still pending.
 
-## Current work and review findings
+## Build checkpoint
 
-App/native/source files remain uncommitted. Reviewer identified invalid numeric draft crashes, step validation trap with prior uneven distribution, average macro mismatch, transaction connection foreign-key gap, and diary stale-date/date-capture bugs. Agents are correcting these with tests. Expo adapter queue fix and integration tests exist; onboarding/capture/preview and FoodScreen fixes are in progress. Root updated Strategy to pass profile units to PlanPreview. Lint currently fails in in-progress Capture/Food purity code; do not claim full checks pass.
+Sept28 build was interrupted during native compilation after JavaScript/assets were bundled and both Expo core ABIs compiled. No APK was produced. Cache remains. Oct07 resumed via npm run build:apk, active shell session61784 at this checkpoint. Saved log `.work/release-build-oct07.log`; earlier log `.work/release-build.log`. Read these before retrying. App and native source are committed; README/release/security/license documentation refinements remain to commit.
 
-## Build / environment
-
-First protected signed release build started Sept27 through `npm run build:apk` (session13304 at checkpoint). No verified APK yet. Native regeneration succeeded. Local Android36 Google APIs x86_64 AVD `NerdFitTest` created; headless emulator started PID2744, logs `.work/emulator-*.log`. No physical phone required. SDK/signing/network access uses explicit sandbox escalation. Earlier account usage-limit failures interrupted work; never bypass approvals.
+Android36 Google APIs x86_64 AVD NerdFitTest exists. Prior headless emulator booted and was placed in airplane mode, but was stopped across session restart. Start again only when needed. ADB UI smoke helper `.work/adb-ui.ps1` exists; no runtime app test completed yet. SDK/signing/network/Git access requires normal sandbox escalation, never bypass it.
 
 ## Exact next actions
 
-Finish and verify reviewer fixes; run full typecheck/lint/tests and Expo dependency/config checks. Inspect active Gradle build; fix native errors. Run final build after all source edits, inspect actual APK through verifier, install and smoke-test in emulator without Metro (onboarding, food/weight, relaunch persistence/settings). Security agent running installed Codex Security + dependency/secret checks; report real limits. Commit coherent source with Git permission; push astra-v1. Copy final signed APK to deliverables/NerdFit-0.1.0-build1.apk, record commit/time/SHA256/test status/known limitations in LATEST_BUILD.md and CHANGELOG.md. Open folder/highlight APK. No Play publication.
+Finish cached release compile; diagnose actual errors if any. Inspect output with verify-apk.ps1, install release in emulator, test offline launch/onboarding/food/weight/settings/relaunch and reinstall data preservation. Check embedded secrets/bundle/manifest. Fix any real runtime defects and rebuild. Copy verified APK to deliverables/NerdFit-0.1.0-build1.apk; record version/code/sourcecommit/time/hash/changes/issues/test evidence in LATEST_BUILD.md and CHANGELOG.md. Commit/push documentation and any fixes, open Explorer at APK. Optional GitHub prerelease upload must not block local delivery. No Play publication. After delivery, wait for user's feedback.
 
-## Sept28 verified checkpoint
+Future adaptive coaching/trends, food packs/search/scanners, AI, Health Connect, backups/export and final icon/design polish remain outside first slice. Figma foundations saved; full Figma screens were blocked by tool quota.
 
-All reviewer fixes are applied. Fresh typecheck/lint and94 tests pass after Expo57.0.25/linking57.0.11/router57.0.23 compatibility updates; Expo dependency check passes. Stable internal key exists outside Git; public fingerprint recorded. PowerShell security/utility module imports are explicit to avoid inherited PS7 module conflicts, DPAPI text trimmed. Unused overlay/storage permissions blocked. Current release build session22489 is compiling Gradle, log .work/release-build.log; no APK yet. Emulator is booted. Security scan b8110e6d-8427-44dd-9a67-0f425be12232 is being finalized with artifact verification still pending.
+Oct07 verification: fresh typecheck/lint and94 tests pass (logs .work/typecheck.log, .work/lint.log, .work/tests.log). Native build continues in session61784. Emulator was deliberately stopped when free RAM fell to590MB; restart after Gradle finishes, not concurrently. No APK at this checkpoint.
