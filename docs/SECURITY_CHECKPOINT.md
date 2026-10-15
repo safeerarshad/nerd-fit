@@ -9,3 +9,7 @@ Fresh npm audit: 14 moderate, zero high/critical, representing two underlying ad
 Core application uses local SQLite and has no AI/provider keys, remote food API integration, or developer-owned API secrets. Internal private signing material stays outside the repository and APK. Parameterized writes, numeric/date validation, transaction foreign keys and rollback, credential-pair/fingerprint continuity, native identity/bundle checks and APK signature inspection are covered by source review or automated checks. Unused overlay/storage permissions are removed by config.
 
 Final artifact signature/manifest/bundle/secret inspection and offline launch/update preservation remain separate delivery gates. The APK verifier's credential-filename scan does not detect every possible embedded secret value. Native dependency SBOM, alternate Router paths, broader device testing and exhaustive binary analysis are outside this completed scan's coverage.
+
+## Artifact follow-up
+
+Oct07 release APK signature/identity/version/bundledJS/nondebug manifest checks passed and were reverified on the exact delivery file Oct15. No credential filenames or high-confidence secret patterns matched the8 scanned dex/assets entries. Android36 offline launch, synthetic core flows, force-stop persistence and same-APK reinstall persistence passed. This does not close exhaustive binary/native dependency analysis or future-version upgrade coverage.

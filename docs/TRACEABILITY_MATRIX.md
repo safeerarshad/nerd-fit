@@ -45,3 +45,7 @@
 ## First APK checkpoint — 2026-09-27
 
 Core onboarding/initial plans/weekly distribution/macros/Home/manual food/raw weight/units/glass/About now have source implementations and SQLite tests. Review fixes and Android runtime validation are in progress; none is marked end-to-end COMPLETE yet. The first APK scope follows APK_DELIVERY_DIRECTIVE; remaining roadmap rows stay planned. Release guards have12 passing tests; no final APK claim at this checkpoint.
+
+## First internal release — 2026-10-15
+
+Initial onboarding/plan/weekly macros/Home/manual food/raw weight/settings/navigation slice is delivered in0.1.0/build1 with94 passing automated tests and Android36 emulator offline/relaunch/reinstall smoke evidence. Full roadmap rows are not universally COMPLETE: later features and broader device gates remain pending. See deliverables/LATEST_BUILD.md for precise coverage; wait for real-phone feedback.
