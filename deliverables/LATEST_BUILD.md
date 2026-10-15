@@ -37,3 +37,5 @@ Codex Security reported zero validated findings with partial coverage. Sept28 de
 Core records stay local. Uninstalling or clearing app storage removes them; this test build has no backup/export. Future compatible APKs should be installed over the existing app. Internal certificate is separate from future Play signing. No Play publication occurred.
 
 The local APK is the delivery artifact; no GitHub release asset was uploaded. Install it on the test phone and provide feedback before major visual changes.
+
+Delivery handoffOct15: Windows File Explorer opened to deliverables with the63.2MB APK selected. Source and release documentation committed and pushed on astra-v1; main unchanged.
